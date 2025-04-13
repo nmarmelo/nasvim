@@ -1,0 +1,2 @@
+require("nasmarr")
+print("hello")
