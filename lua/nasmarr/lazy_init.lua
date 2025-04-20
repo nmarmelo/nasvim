@@ -14,5 +14,5 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     spec = "nasmarr.lazy",
     change_detection = { notify = false },
-    colorscheme = 'desert'
+    colorscheme = 'tokyonight-storm'
 })
