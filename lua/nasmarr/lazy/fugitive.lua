@@ -3,12 +3,17 @@ return {
     config = function()
         vim.keymap.set("n", "<leader>gs", vim.cmd.Git, { desc = '[G]it [S]tatus' })
 
-        vim.keymap.set("n", "<leader>gp", vim.cmd.Git('push'), { desc = '[G]it [p]ush' })
+        -- These don't really do anything right now. Maybe revisit one day.
+        -- Or set up telescope to work with fugitive better.
 
-        vim.keymap.set("n", "<leader>gP", function() vim.cmd.Git('pull', '--rebase') end, { desc = '[G]it [P]ull' })
-
-        vim.keymap.set("n", "<leader>gc", vim.cmd.Git('commit'), { desc = '[G]it [C]ommit' })
-
+--         vim.keymap.set("n", "<leader>gp", vim.cmd.Git('push'), { desc = '[G]it [p]ush' })
+-- 
+--         vim.keymap.set("n", "<leader>gP", function() vim.cmd.Git('pull', '--rebase') end, { desc = '[G]it [P]ull' })
+-- 
+--         vim.keymap.set("n", "<leader>gc", vim.cmd.Git('commit'), { desc = '[G]it [C]ommit' })
+-- 
+--         vim.keymap.set("n", "<leader>ga", ":Git add .", { desc = '[G]it [A]dd' })
+-- 
 --        local nasmarr_Fugitive = vim.api.nvim_create_augroup("nasmarr_Fugitive", {})
 --
 --         local autocmd = vim.api.nvim_create_autocmd
