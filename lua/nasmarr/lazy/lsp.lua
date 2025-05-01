@@ -78,6 +78,9 @@ return {
                         capabilities = capabilities,
                         settings = {
                             Lua = {
+                                diagnostics = {
+                                    globals = {'vim'}
+                                },
                                 format = {
                                     enable = true,
                                     -- Put format options here
