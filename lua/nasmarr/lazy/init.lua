@@ -1,5 +1,6 @@
 return {
   "nvim-lua/plenary.nvim",
   "eandrju/cellular-automaton.nvim",
-  "nvim-tree/nvim-web-devicons"
+  "nvim-tree/nvim-web-devicons",
+  "folke/neodev.nvim"
 }

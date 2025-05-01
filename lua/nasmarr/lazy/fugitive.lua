@@ -6,7 +6,8 @@ return {
         vim.keymap.set("n", "<leader>gp", vim.cmd.Git('push'), { desc = '[G]it [p]ush' })
 
         vim.keymap.set("n", "<leader>gP", function() vim.cmd.Git('pull', '--rebase') end, { desc = '[G]it [P]ull' })
---        vim.keymap.set("n", "<leader>gP", vim.cmd.Git({'pull',  '--rebase'}), { desc = '[G]it [P]ull and rebase' })
+
+        vim.keymap.set("n", "<leader>gc", vim.cmd.Git('commit'), { desc = '[G]it [C]ommit' })
 
 --        local nasmarr_Fugitive = vim.api.nvim_create_augroup("nasmarr_Fugitive", {})
 --
