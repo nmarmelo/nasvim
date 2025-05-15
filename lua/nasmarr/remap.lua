@@ -10,7 +10,7 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
 -- Shortcut for getting back to netrw, probably not needed once I get used to telescope
-vim.keymap.set("n", "<leader>e", vim.cmd.Ex, { desc = "[E]xplore"})
+vim.keymap.set("n", "<leader>e", vim.cmd.Lexplore, { desc = "[E]xplore"})
 
 -- TIP: Disable arrow keys in normal mode
 vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
