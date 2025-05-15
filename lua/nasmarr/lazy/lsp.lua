@@ -40,62 +40,62 @@ return {
 
         require("fidget").setup({})
         require("mason").setup()
-        require("mason-lspconfig").setup({
-            ensure_installed = {
-                "lua_ls",
-                -- "rust_analyzer",
-                "gopls",
-                "cssls",
-                "html",
-                "eslint",
-            },
-            handlers = {
-                function(server_name) -- default handler (optional)
-                    require("lspconfig")[server_name].setup {
-                        capabilities = capabilities
-                    }
-                end,
-
-                zls = function()
-                    local lspconfig = require("lspconfig")
-                    lspconfig.zls.setup({
-                        root_dir = lspconfig.util.root_pattern(".git", "build.zig", "zls.json"),
-                        settings = {
-                            zls = {
-                                enable_inlay_hints = true,
-                                enable_snippets = true,
-                                warn_style = true,
-                            },
-                        },
-                    })
-                    vim.g.zig_fmt_parse_errors = 0
-                    vim.g.zig_fmt_autosave = 0
-
-                end,
-                ["lua_ls"] = function()
-                    local lspconfig = require("lspconfig")
-                    lspconfig.lua_ls.setup {
-                        capabilities = capabilities,
-                        settings = {
-                            Lua = {
-                                diagnostics = {
-                                    globals = {'vim'}
-                                },
-                                format = {
-                                    enable = true,
-                                    -- Put format options here
-                                    -- NOTE: the value should be STRING!!
-                                    defaultConfig = {
-                                        indent_style = "space",
-                                        indent_size = "2",
-                                    }
-                                },
-                            }
-                        }
-                    }
-                end,
-            }
-        })
+--         require("mason-lspconfig").setup({
+--             ensure_installed = {
+--                 "lua_ls",
+--                 -- "rust_analyzer",
+--                 "gopls",
+--                 "cssls",
+--                 "html",
+--                 "eslint",
+--             },
+--             handlers = {
+--                 function(server_name) -- default handler (optional)
+--                     require("lspconfig")[server_name].setup {
+--                         capabilities = capabilities
+--                     }
+--                 end,
+-- 
+--                 zls = function()
+--                     local lspconfig = require("lspconfig")
+--                     lspconfig.zls.setup({
+--                         root_dir = lspconfig.util.root_pattern(".git", "build.zig", "zls.json"),
+--                         settings = {
+--                             zls = {
+--                                 enable_inlay_hints = true,
+--                                 enable_snippets = true,
+--                                 warn_style = true,
+--                             },
+--                         },
+--                     })
+--                     vim.g.zig_fmt_parse_errors = 0
+--                     vim.g.zig_fmt_autosave = 0
+-- 
+--                 end,
+--                 ["lua_ls"] = function()
+--                     local lspconfig = require("lspconfig")
+--                     lspconfig.lua_ls.setup {
+--                         capabilities = capabilities,
+--                         settings = {
+--                             Lua = {
+--                                 diagnostics = {
+--                                     globals = {'vim'}
+--                                 },
+--                                 format = {
+--                                     enable = true,
+--                                     -- Put format options here
+--                                     -- NOTE: the value should be STRING!!
+--                                     defaultConfig = {
+--                                         indent_style = "space",
+--                                         indent_size = "2",
+--                                     }
+--                                 },
+--                             }
+--                         }
+--                     }
+--                 end,
+--             }
+--         })
 
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
@@ -145,8 +145,8 @@ return {
         -- In this case, we create a function that lets us more easily define mappings specific
         -- for LSP related items. It sets the mode, buffer and description for us each time.
         local map = function(keys, func, desc, mode)
-        mode = mode or 'n'
-        vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
+            mode = mode or 'n'
+            vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
         end
 
         -- Rename the variable under your cursor.
