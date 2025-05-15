@@ -40,6 +40,9 @@ vim.opt.updatetime = 50
 -- case insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+
+vim.opt.clipboard = "unnamedplus"
+
     -- Autocommands --
 
 -- Highlight when yanking (copying) text
