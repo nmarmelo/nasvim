@@ -1,2 +1,1 @@
 require("nasmarr")
-print("hello")
