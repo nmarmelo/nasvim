@@ -29,7 +29,6 @@ return {
 
         require("fidget").setup({})
         require("mason").setup()
-        -- require("mason-lspconfig").setup()
         require("mason-lspconfig").setup({
             ensure_installed = {
                 "lua_ls",
@@ -37,7 +36,7 @@ return {
                 "cssls",
                 "html",
                 "eslint",
-                "tsserver",
+                "ts_ls",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
@@ -68,6 +67,10 @@ return {
                         }
                     }
                 end,
+                ["ts_ls"] = function ()
+                    local lspconfig = require("lspconfig")
+                    lspconfig.ts_ls.setup({capabilities = capabilities})
+                end
             }
         })
 

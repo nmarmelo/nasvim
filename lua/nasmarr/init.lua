@@ -4,5 +4,5 @@ require("nasmarr.lazy_init")
 require("nasmarr.nasvim_ascii")
 
 --Colors!
-vim.cmd.colorscheme('tokyonight')
+vim.cmd.colorscheme('catppuccin-mocha')
 
